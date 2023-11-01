@@ -95,9 +95,7 @@ public class SGPrintShot : SGBaseShot
         {
             return;
         }
-
         delayTimer -= SGTimer.Instance.deltaTime;
-
         while (delayTimer <= 0)
         {
             List<int> lineData = paintData[nowIndex];
@@ -110,7 +108,6 @@ public class SGPrintShot : SGBaseShot
                     {
                         break;
                     }
-
                     float angle = paintStartAngle + (betweenAngle * i);
                     ShotProjectile(projectile, projectileSpeed, angle);
                     projectile.UpdateMove(-delayTimer);
@@ -124,7 +121,6 @@ public class SGPrintShot : SGBaseShot
                 return;
             }
             delayTimer += nextLineDelay;
-
         }
     }
 }
